@@ -49,6 +49,7 @@ export default Vue.extend({
     ...mapActions('snackbar', ['pushSnackbarMessage']),
     setLanguage() {
       try {
+        this.$i18n.setLocale(this.UICulture);
         this.$api.startup.updateInitialConfiguration({
           startupConfigurationDto: {
             ...this.initialConfig,
