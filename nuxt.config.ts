@@ -181,7 +181,7 @@ const config: NuxtConfig = {
           warning: '#FB8C00',
           error: '#FF5252',
           success: '#4CAF50',
-          background: '#101010',
+          background: '#14141F',
           track: '#272727',
           thumb: '#303030'
         },

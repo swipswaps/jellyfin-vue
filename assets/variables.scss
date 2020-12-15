@@ -3,9 +3,17 @@
 // The variables you want to modify
 // $font-size-root: 20px;
 
+@import '~vuetify/src/styles/styles.sass';
+
 // Globals
 $body-font-family: 'Noto Sans',
 'Roboto',
 sans-serif !default;
 $font-size-root: 14px;
 $input-font-size: 14px;
+
+$material-dark: map-merge($material-dark, ('navigation-drawer': #1a2932,
+    'app-bar': #1a2932,
+    'dividers': #2b4554,
+    'chips': #1f3247,
+    'text': ('primary': #edf2f7)))
