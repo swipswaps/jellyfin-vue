@@ -22,6 +22,7 @@
   "dislikes": "Dislikes",
   "endDate": "End date",
   "endsAt": "Ends at {time}",
+  "episodeNumber": "Episode {episodeNumber}",
   "errors": {
     "anErrorHappened": "An error happened",
     "messages": {
@@ -29,12 +30,12 @@
       "videoPlayerError": "The video player encountered an unrecoverable error."
     }
   },
-  "episodeNumber": "Episode {episodeNumber}",
   "failedToRefreshItems": "Failed to refresh items",
   "favorite": "Favorite",
   "features": "Features",
   "filter": "Filter",
   "filtersNotFound": "Unable to load filters",
+  "fullScreen": "Full screen",
   "genres": "Genres",
   "home": "Home",
   "incorrectUsernameOrPassword": "Incorrect username or password",
@@ -64,6 +65,7 @@
   "play": "Play",
   "played": "Played",
   "present": "Present",
+  "queue": "Queue",
   "rating": "Rating",
   "releaseDate": "Release date",
   "resumable": "Resumable",

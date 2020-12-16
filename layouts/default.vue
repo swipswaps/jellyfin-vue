@@ -106,6 +106,9 @@
     <v-main>
       <nuxt />
     </v-main>
+    <v-footer v-if="false" app>
+      <music-player />
+    </v-footer>
     <!-- Utilities and global systems -->
     <snackbar />
   </v-app>
