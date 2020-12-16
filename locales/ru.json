@@ -27,7 +27,7 @@
     "rating": "Оценка",
     "releaseDate": "Дата выпуска",
     "serverAddress": "Адрес сервера",
-    "serverAddressMustBeUrl": "Адрес сервера должен быть действительным URL",
+    "serverAddressMustBeUrl": "Адрес сервера должен быть действительным",
     "serverAddressRequired": "Требуется адрес сервера",
     "serverNotFound": "Сервер не найден",
     "serverVersionTooLow": "Версия сервера должна быть 10.7.0 или выше",
@@ -65,5 +65,43 @@
     "byArtist": "-",
     "biography": "Биография",
     "artist": "Исполнитель",
-    "albums": "Альбомы"
+    "albums": "Альбомы",
+    "unliked": "Не нравится",
+    "studios": "Студии",
+    "sortByType": "По {type}",
+    "selectUser": "Выбрать пользователя",
+    "series": "Сериал",
+    "noResultsFound": "Здесь ничего нет",
+    "networks": "Телесети",
+    "name": "Имя",
+    "manualLogin": "Войти вручную",
+    "loginAs": "Войти как {name}",
+    "liked": "Нравится",
+    "filter": "Фильтр",
+    "failedToRefreshItems": "Не удалось обновить элементы",
+    "collections": "Коллекции",
+    "changeUser": "Сменить пользователя",
+    "artists": "Исполнители",
+    "actors": "Актёры",
+    "unableGetRelated": "Невозможно получить связанные элементы",
+    "viewDetails": "Подробности",
+    "validation": {
+        "required": "Это поле обязательное",
+        "mustBeUrl": "В этом поле должен быть действующий URL"
+    },
+    "numberTracks": "{number} дорож[ка/ки/ек]",
+    "nextUp": "Очередное",
+    "libraries": "Медиатеки",
+    "latestLibrary": "Новейшее {libraryName}",
+    "darkModeToggle": "Переключиться на тёмный режим",
+    "errors": {
+        "messages": {
+            "videoPlayerError": "В видео проигрывателе произошла неустранимая ошибка.",
+            "errorCode": "Код ошибки: {errorCode}"
+        },
+        "anErrorHappened": "Произошла ошибка"
+    },
+    "buttons": {
+        "ok": "ОК"
+    }
 }

@@ -16,7 +16,7 @@
     "moreLikeThis": "Similar a esto",
     "play": "Reproducir",
     "present": "Actualidad",
-    "serverAddressMustBeUrl": "La dirección del servidor debe ser una URL válida",
+    "serverAddressMustBeUrl": "La dirección del servidor debe ser una dirección válida",
     "serverAddressRequired": "Se requiere dirección del servidor",
     "serverNotFound": "No se ha podido encontrar el servidor",
     "settings": "Ajustes",
@@ -55,5 +55,44 @@
     "unhandledException": "Excepción no controlada",
     "themeSong": "Tema Musical",
     "resumable": "Se puede continuar",
-    "unplayed": "No reproducido"
+    "unplayed": "No reproducido",
+    "selectServer": "Seleccionar servidor",
+    "moreLikeArtist": "Más como {artist}",
+    "disc": "Disco {discNumber}",
+    "byArtist": "Por",
+    "connect": "Conectar",
+    "changeServer": "Cambiar servidor",
+    "biography": "Biografía",
+    "artist": "Artista",
+    "albums": "Álbumes",
+    "studios": "Estudios",
+    "sortByType": "Por {type}",
+    "series": "Series",
+    "noResultsFound": "No hay nada aquí",
+    "networks": "Redes",
+    "name": "Nombre",
+    "filter": "Filtrar",
+    "failedToRefreshItems": "Fallo al refrescar los artículos",
+    "collections": "Colecciones",
+    "artists": "Artistas",
+    "actors": "Actores",
+    "selectUser": "Seleccionar un usuario",
+    "manualLogin": "Inicio de sesión manual",
+    "loginAs": "Iniciar sesión como {name}",
+    "changeUser": "Cambiar usuario",
+    "validation": {
+        "required": "Este campo es obligatorio"
+    },
+    "shuffleAll": "Mezclar todo",
+    "libraries": "Bibliotecas",
+    "errors": {
+        "messages": {
+            "errorCode": "Código de error: {errorCode}"
+        },
+        "anErrorHappened": "Ocurrió un error"
+    },
+    "darkModeToggle": "Cambiar a modo oscuro",
+    "buttons": {
+        "ok": "Vale"
+    }
 }

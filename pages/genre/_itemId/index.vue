@@ -11,6 +11,7 @@
           :disabled="isPlayable"
           depressed
           rounded
+          nuxt
           :to="`./${genre.Id}/play`"
           >{{ $t('play') }}</v-btn
         >
@@ -21,6 +22,7 @@
           :disabled="isPlayable"
           outlined
           rounded
+          nuxt
           :to="`./${genre.Id}/shuffle`"
           >{{ $t('shuffleAll') }}</v-btn
         >
@@ -32,7 +34,7 @@
           <skeleton-card v-for="n in 24" :key="n" />
         </v-col>
       </v-row>
-      <item-grid v-if="items.length" :items="itemsChunks" />
+      <item-grid v-if="items.length" :items="items" />
       <v-row v-else-if="loaded" justify="center">
         <v-col cols="12" class="card-grid-container empty-card-container">
           <skeleton-card v-for="n in 24" :key="n" boilerplate />
@@ -50,8 +52,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import { mapActions } from 'vuex';
-import { chunk } from 'lodash';
-import { BaseItemDto } from '~/api';
+import { BaseItemDto } from '@jellyfin/client-axios';
 
 export default Vue.extend({
   data() {
@@ -65,38 +66,6 @@ export default Vue.extend({
     return {
       title: this.$store.state.page.title
     };
-  },
-  computed: {
-    itemsChunks: {
-      get() {
-        let cardsPerLine = 8;
-
-        if (this.$vuetify.breakpoint.smAndDown) {
-          cardsPerLine = 3;
-        } else if (
-          this.$vuetify.breakpoint.smAndUp &&
-          !this.$vuetify.breakpoint.lgAndUp
-        ) {
-          cardsPerLine = 4;
-        } else if (
-          this.$vuetify.breakpoint.lgAndUp &&
-          !this.$vuetify.breakpoint.xlOnly
-        ) {
-          cardsPerLine = 6;
-        }
-
-        const chunks = chunk(this.$data.items, cardsPerLine);
-
-        const keyedChunks = chunks.map((itemChunk, index) => {
-          return {
-            id: index,
-            chunk: itemChunk
-          };
-        });
-
-        return keyedChunks;
-      }
-    }
   },
   async beforeMount() {
     this.setAppBarOpacity({ opaqueAppBar: true });
@@ -128,7 +97,6 @@ export default Vue.extend({
 
       this.loaded = true;
     } catch (error) {
-      console.error(error);
       // Can't get given library ID
       this.$nuxt.error({
         statusCode: 404,
@@ -161,19 +129,6 @@ export default Vue.extend({
 
 .scroller {
   max-height: 100%;
-}
-
-.empty-card-container {
-  max-height: 90vh;
-  overflow: hidden;
-  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
-}
-
-.empty-message {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 @import '~vuetify/src/styles/styles.sass';

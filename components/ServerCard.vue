@@ -23,7 +23,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import { mapActions } from 'vuex';
-import { PublicSystemInfo } from '~/api';
+import { PublicSystemInfo } from '@jellyfin/client-axios';
 
 export default Vue.extend({
   props: {
@@ -44,6 +44,7 @@ export default Vue.extend({
     ...mapActions('snackbar', ['pushSnackbarMessage']),
     ...mapActions('servers', ['connectServer', 'removeServer']),
     async setServer() {
+      // TODO: Merge with the identical method in AddServerForm
       this.loading = true;
       await this.connectServer(this.serverInfo.address);
       this.loading = false;

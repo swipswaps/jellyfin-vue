@@ -6,7 +6,8 @@
           item.ImageBlurHashes &&
           item.ImageBlurHashes.Primary &&
           item.ImageTags &&
-          item.ImageTags.Primary
+          item.ImageTags.Primary &&
+          item.ImageBlurHashes.Primary[item.ImageTags.Primary]
         "
         key="canvas"
         :hash="item.ImageBlurHashes.Primary[item.ImageTags.Primary]"
@@ -21,6 +22,7 @@
         class="absolute"
         :src="image"
         v-bind="$attrs"
+        @error="$emit('error')"
       />
     </transition-group>
   </div>
@@ -28,7 +30,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import { BaseItemDto, ImageType } from '~/api';
+import { BaseItemDto, ImageType } from '@jellyfin/client-axios';
 import imageHelper from '~/mixins/imageHelper';
 
 export default Vue.extend({
@@ -60,9 +62,9 @@ export default Vue.extend({
     if (this.item.ImageTags && this.item.ImageTags.Primary) {
       const card = this.$refs.card as HTMLElement;
       this.image = this.getImageUrlForElement(
-        card,
         this.item,
-        ImageType.Primary
+        ImageType.Primary,
+        card
       );
     }
   }
