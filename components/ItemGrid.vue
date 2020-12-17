@@ -20,7 +20,13 @@
           :data-index="index"
           class="card-grid-container"
         >
-          <card v-for="card of item.chunk" :key="card.Id" :item="card" />
+          <!-- Remove the lazy prop once virtual scroller is removed -->
+          <card
+            v-for="card of item.chunk"
+            :key="card.Id"
+            :item="card"
+            :lazy="false"
+          />
         </dynamic-scroller-item>
       </template>
     </dynamic-scroller>

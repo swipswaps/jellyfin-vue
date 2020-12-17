@@ -8,6 +8,7 @@
           <blurhash-image
             v-if="!imageLoadError && item.ImageTags && item.ImageTags.Primary"
             :item="item"
+            :lazy="lazy"
             class="card-image"
             @error="imageLoadError = true"
           />
@@ -108,6 +109,12 @@ export default Vue.extend({
       type: Boolean,
       default: () => {
         return false;
+      }
+    },
+    lazy: {
+      type: Boolean,
+      default: () => {
+        return true;
       }
     }
   },

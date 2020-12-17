@@ -4,11 +4,9 @@
       <v-col cols="9">
         <v-row>
           <v-col cols="9" class="d-flex flex-row">
-            <v-img
+            <lazy-image
               v-if="item.ImageTags && item.ImageTags.Primary"
               class="person-image elevation-2 ml-2"
-              cover
-              aspect-ratio="1"
               :src="`${$axios.defaults.baseURL}/Items/${item.Id}/Images/Primary`"
             />
             <div class="ml-4 d-flex flex-column">
@@ -75,8 +73,7 @@
                 <v-container>
                   <v-row>
                     <v-col>
-                      <v-img
-                        cover
+                      <lazy-image
                         :src="`${$axios.defaults.baseURL}/Items/${item.Id}/Images/Backdrop`"
                       />
                       <div v-if="item.Overview">

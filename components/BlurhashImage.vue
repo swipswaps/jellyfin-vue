@@ -1,6 +1,6 @@
 <template>
   <div ref="card" class="absolute">
-    <transition-group mode="in-out" name="fade" class="absolute">
+    <transition-group v-if="!lazy" mode="in-out" name="fade" class="absolute">
       <blurhash-canvas
         v-if="
           item.ImageBlurHashes &&
@@ -25,6 +25,29 @@
         @error="$emit('error')"
       />
     </transition-group>
+    <div v-else class="absolute">
+      <blurhash-canvas
+        v-if="
+          item.ImageBlurHashes &&
+          item.ImageBlurHashes.Primary &&
+          item.ImageTags &&
+          item.ImageTags.Primary &&
+          item.ImageBlurHashes.Primary[item.ImageTags.Primary]
+        "
+        key="canvas"
+        :hash="item.ImageBlurHashes.Primary[item.ImageTags.Primary]"
+        :width="width"
+        :height="height"
+        :punch="punch"
+        class="absolute"
+      />
+      <lazy-image
+        v-if="item.ImageTags && item.ImageTags.Primary && lazy"
+        key="image"
+        class="absolute blurhashImage"
+        :src="image"
+      />
+    </div>
   </div>
 </template>
 
@@ -51,6 +74,12 @@ export default Vue.extend({
     punch: {
       type: Number,
       default: 1
+    },
+    lazy: {
+      type: Boolean,
+      default: () => {
+        return true;
+      }
     }
   },
   data() {
@@ -71,7 +100,7 @@ export default Vue.extend({
 });
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .absolute {
   height: 100%;
   width: 100%;
@@ -81,7 +110,9 @@ export default Vue.extend({
   right: 0;
   bottom: 0;
 }
-img {
-  object-fit: cover;
+
+.blurhashImage {
+  background-position: center;
+  background-size: cover;
 }
 </style>
